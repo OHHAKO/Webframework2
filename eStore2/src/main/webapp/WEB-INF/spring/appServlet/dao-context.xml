@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+
+	<!-- context:pro-placeholder에 오류줄 뜨면 namespace 가서 context 박스 체크 -->
+	<context:property-placeholder
+		location="/WEB-INF/props/jdbc.properties" />
+	<!-- 어노테이션 기능 활성화 -->
+	<context:annotation-config></context:annotation-config>
+
+
+	<bean id="dataSource"
+		class="org.apache.commons.dbcp2.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName"
+			value="${jdbc.driverClassName}" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+	</bean>
+
+	<!-- <bean id="offerDAO" class="kr.ac.hansung.csemall.OfferDAO" > -->
+	<!-- autowired 쓰므로 필요없는 <property name="dataSource" ref="dataSource"></property> -->
+	<!-- </bean> @Component 쓰므로 필요없는 부분 -->
+
+	<!-- 이 패키지를 스캔해서 Component 어노테이션 있는거 찾아서 객체로 등록해준다. -->
+	<context:component-scan
+		base-package="kr.ac.hansung.cse.dao">
+	</context:component-scan>
+
+
+</beans>

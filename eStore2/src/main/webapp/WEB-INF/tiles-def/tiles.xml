@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<!-- definition은 하나으 페이지다. -->
+<tiles-definitions>
+
+	<definition name="base"
+		template="/WEB-INF/tamplates/layout.jsp">
+		<put-attribute name="title" value="Estore homepage" />
+		<put-attribute name="menu"
+			value="/WEB-INF/tamplates/menu.jsp" />
+		<put-attribute name="footer"
+			value="/WEB-INF/tamplates/footer.jsp" />
+	</definition>
+
+	<definition name="home" extends="base">
+		<put-attribute name="title" value="My Estore homepage" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/home.jsp" />
+	</definition>
+
+	<definition name="products" extends="base">
+		<put-attribute name="title" value="Products homepage" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/products.jsp" />
+	</definition>
+
+	<definition name="admin" extends="base">
+		<put-attribute name="title"
+			value="Administrator homepage" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/admin.jsp" />
+	</definition>
+
+	<definition name="productInventory" extends="base">
+		<put-attribute name="title"
+			value="Product Inventory page" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/productInventory.jsp" />
+	</definition>
+
+	<definition name="addProduct" extends="base">
+		<put-attribute name="title" value="Add Product page" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/addProduct.jsp" />
+	</definition>
+
+	<definition name="updateProduct" extends="base">
+		<put-attribute name="title" value="Update Product page" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/updateProduct.jsp" />
+	</definition>
+
+	<definition name="login" extends="base">
+		<put-attribute name="title" value="Login page" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/login.jsp" />
+	</definition>
+
+	<definition name="viewProduct" extends="base">
+		<put-attribute name="title" value="Login page" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/viewProduct.jsp" />
+	</definition>
+
+
+
+	<!-- 위의 definition 의 name 속성 값은 컨트롤러가 넘겨주는 값과 같다 -->
+</tiles-definitions>
