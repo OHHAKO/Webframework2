@@ -1,2 +1,3 @@
-Java Spring Framework test 개발<br>
-pom.xml에서 dependency, version 관리
+Java Spring Framework 역할: 구현에 필요한 일 제어
+<br>
+pom.xml 역할: dependency, version 관리
